@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class ArrayTest2 {
     public static void main(String[] args) {
         /**
+         * 이런 식으로 주석을달면 문서에서도 보인다.
          * 최적화 문제 중 최대값 구하기
          * */
         Scanner sc = new Scanner(System.in);
