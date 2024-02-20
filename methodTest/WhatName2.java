@@ -11,6 +11,5 @@ public class WhatName2 {
         Scanner sc = new Scanner(System.in);
         String name = inputName(sc);
         System.out.println("이름 : " + name);
-
-    } 
+    }
 }
