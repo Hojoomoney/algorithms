@@ -12,6 +12,7 @@ public class Lotto {
                 lotto[i] = (int) (Math.random()*45) + 1;
             }
             boolean hasDuplicate = false;
+        //중복 체크
             for (int i = 0; i < lotto.length; i++) {
                 for (int j = i+1; j < lotto.length ; j++) {
                     if(lotto[i] == lotto[j]){
@@ -23,7 +24,7 @@ public class Lotto {
                 check = true;
             }
         }
-
+        //오름차순 정렬
         for (int i = 1; i < lotto.length; i++) {
             for (int j = 0; j < lotto.length-i; j++) {
                 if(lotto[j] > lotto[j+1]){
