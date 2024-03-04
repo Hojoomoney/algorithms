@@ -5,8 +5,7 @@ import java.util.Scanner;
 public class Bee21758 {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        int n = scan.nextInt();
-        long[] honey = new long[n];
+        long[] honey = new long[scan.nextInt()];
         long totalHoney = 0;
         for (int i = 0; i < honey.length; i++) {
             honey[i] = scan.nextInt();

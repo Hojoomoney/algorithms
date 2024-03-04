@@ -7,8 +7,8 @@ public class MeetingRoom {
     public static void main(String[] args) {
 
         Scanner scan = new Scanner(System.in);
-        int n = scan.nextInt();
         List<Times> times = new ArrayList<>();
+        int n = scan.nextInt();
         for (int i = 0; i < n; i++) {
             times.add(new Times(scan.nextInt(),scan.nextInt()));
         }
@@ -26,35 +26,19 @@ public class MeetingRoom {
     }
 }
 class Times implements Comparable<Times>{
-    public int startTime;
-    public int endTime;
+    int startTime;
+    int endTime;
 
     public Times(int startTime, int endTime) {
         this.startTime = startTime;
         this.endTime = endTime;
     }
-
-    @Override
-    public String toString() {
-        return "algorithmTest.Times{" +
-                "startTime=" + startTime +
-                ", endTime=" + endTime +
-                '}';
-    }
-
     @Override
     public int compareTo(Times times) {
-        if(times.endTime < endTime){
-            return 1;
-        } else if (times.endTime > endTime){
-            return -1;
-        } else if (times.endTime == endTime){
-            if(times.startTime < startTime){
-                return 1;
-            } else {
-                return -1;
-            }
+
+        if(times.endTime == endTime){
+            return startTime - times.startTime;
         }
-        return 0;
+        return endTime - times.endTime;
     }
 }

@@ -19,12 +19,12 @@ public class Dwarf {
                 if(sum-(arr[i] + arr[j]) == 100){
                     arr[i] = 0;
                     arr[j] = 0;
+                    Arrays.sort(arr);
+                    for (int k = 2; k < 9; k++) {
+                        System.out.println(arr[k]);
+                    }
                 }
             }
-        }
-        Arrays.sort(arr);
-        for (int k = 2; k < 9; k++) {
-            System.out.println(arr[k]);
         }
 
     }
