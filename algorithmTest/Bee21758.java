@@ -23,7 +23,7 @@ public class Bee21758 {
         }
         long leftCornerBee = totalHoney - honey[honey.length-1];
         movingBee = leftCornerBee;
-        for (int i = honey.length-2; i > 1; i--) {
+        for (int i = honey.length-2; i > 0; i--) {
             long fixingBee = leftCornerBee - honey[i];
             movingBee -= honey[i];
             long sum = fixingBee + movingBee;

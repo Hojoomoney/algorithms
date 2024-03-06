@@ -17,7 +17,7 @@ public class Test {
                 count++;
             }
         }
-        for (int i = 0; i < str.length()-1; i++) {
+        for (int i = 0; i < count-1; i++) {
             list.add(str.charAt(i));
         }
         int min = Integer.MAX_VALUE;
