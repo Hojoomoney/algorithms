@@ -15,7 +15,7 @@ public class Bee {
         int max = 0;
         int rightCornerMax = getMaxRightCorner(honey, totalHoney, max);
         int leftCornerMax = getMaxLeftCorner(honey,totalHoney, max);
-        int middleMax = getMaxMiddle(honey, max);
+        int middleMax = getMaxMiddle(honey, totalHoney, max);
         max = Math.max(rightCornerMax,Math.max(leftCornerMax,middleMax));
         System.out.println(max);
     }
@@ -41,21 +41,14 @@ public class Bee {
         }
         return max;
     }
-    static int getMaxMiddle(int[] honey, int max,int totalHoney){
-//        int leftBee = 0;
-//        int rightBee = totalHoney - honey[0] - honey[honey.length-1];
+    static int getMaxMiddle(int[] honey, int totalHoney, int max){
+        int leftBee = 0;
+        int rightBee = totalHoney - honey[honey.length-1];
         for (int i = 1; i < honey.length-1; i++) {
-            //leftBee += honey[i];
-
-            int sum = 0;
-            for (int j = 1; j <= i ; j++) {
-                sum += honey[j];
-            }
-            for (int k = honey.length - 2; k >= i ; k--) {
-                sum += honey[k];
-            }
+            leftBee += honey[i];
+            rightBee -= honey[i-1];
+            int sum = leftBee + rightBee;
             max = Math.max(sum,max);
-            System.out.println(max);
         }
         return max;
     }
