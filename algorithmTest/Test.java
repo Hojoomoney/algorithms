@@ -7,6 +7,10 @@ import java.util.StringTokenizer;
 
 public class Test {
     public static void main(String[] args) throws IOException {
-        System.out.println("Hello World!");
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String sentence = br.readLine();
+        StringTokenizer st = new StringTokenizer(sentence);
+        int count = st.countTokens();
+        System.out.println(count);
     }
 }
