@@ -22,7 +22,6 @@ public class BulbSwitch {
         bulbs1[0] = 1 - bulbs1[0];
         bulbs1[1] = 1 - bulbs1[1];
         for (int i = 1; i < n; i++) {
-
             // 첫번째 전구를 켰을때 비교
             if(bulbs1[i-1] != ends[i-1]){
                 bulbs1[i-1] = 1 - bulbs1[i-1];
