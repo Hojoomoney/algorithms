@@ -19,6 +19,7 @@ public class BulbSwitch {
             bulbs2[i] = bulbs.charAt(i) - '0';
             ends[i] = end.charAt(i) - '0';
         }
+
         bulbs1[0] = 1 - bulbs1[0];
         bulbs1[1] = 1 - bulbs1[1];
         for (int i = 1; i < n; i++) {
