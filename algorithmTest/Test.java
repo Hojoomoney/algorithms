@@ -1,37 +1,16 @@
 package algorithmTest;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 
 public class Test {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
-        Scanner scan = new Scanner(System.in);
-        String str = scan.next();
-        List<Character> list = new ArrayList<>();
-        int count = 0;
-        for (int i = 0; i < str.length(); i++) {
-            list.add(str.charAt(i));
-            if(str.charAt(i) == 'a'){
-                count++;
-            }
-        }
-        for (int i = 0; i < count-1; i++) {
-            list.add(str.charAt(i));
-        }
-        int min = Integer.MAX_VALUE;
-        int bCount = 0;
-        for (int i = 0; i < str.length(); i++) {
-            for (int j = i; j < count+i; j++) {
-                if(list.get(j) == 'b'){
-                    bCount++;
-                }
-            }
-            min = Math.min(bCount,min);
-            bCount = 0;
-        }
-        System.out.println(min);
-
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        String sentence = br.readLine();
+        StringTokenizer st = new StringTokenizer(sentence);
+        System.out.println(st.countTokens());
     }
 }
