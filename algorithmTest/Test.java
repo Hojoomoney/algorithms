@@ -8,9 +8,12 @@ import java.util.StringTokenizer;
 public class Test {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String sentence = br.readLine();
-        StringTokenizer st = new StringTokenizer(sentence);
-        int count = st.countTokens();
-        System.out.println(count);
+        int number = Integer.parseInt(br.readLine());
+        System.out.println(fibonacci(number));
+    }
+    static int fibonacci(int n){
+        if (n==0) return 0;
+        if (n==1) return 1;
+        return fibonacci(n-1) + fibonacci(n-2);
     }
 }
