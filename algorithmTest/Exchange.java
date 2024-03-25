@@ -17,8 +17,7 @@ public class Exchange {
         for (int i = 0; i < count-1; i++) {
             list.add(str.charAt(i));
         }
-        System.out.println(list);
-        List<Integer> bList = new ArrayList<>();
+        int min = Integer.MAX_VALUE;
         int bCount = 0;
         for (int i = 0; i < str.length(); i++) {
             for (int j = i; j < count+i; j++) {
@@ -26,9 +25,10 @@ public class Exchange {
                     bCount++;
                 }
             }
-            bList.add(bCount);
+            min = Math.min(bCount,min);
             bCount = 0;
         }
-        System.out.println(bList);
+        System.out.println(min);
+
     }
 }
