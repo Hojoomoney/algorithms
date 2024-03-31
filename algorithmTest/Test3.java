@@ -12,13 +12,19 @@ public class Test3 {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int numCases = Integer.parseInt(br.readLine());
-        List<Rank> ranks = new ArrayList<>();
-        for (int i = 0; i < numCases; i++) {
-            int numApps = Integer.parseInt(br.readLine());
-            for (int j = 0; j < numApps; j++) {
+        
+        List<Integer> maxCounts = new ArrayList<>();
+        int loop = 1;
+        while (loop <= numCases){
+            int apps = Integer.parseInt(br.readLine());
+            for (int i = 0; i < apps; i++) {
+                List<Rank> ranks = new ArrayList<>();
             }
-        }
 
+
+
+            loop++;
+        }
     }
 }
 class Rank {
