@@ -8,27 +8,17 @@ public class Test {
     public static void main(String[] args) throws IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String str = br.readLine();
-        StringBuilder sb = new StringBuilder();
-        char word = str.charAt(0);
-        sb.append(word);
-        for (int i = 1; i < str.length(); i++) {
-            if (word != str.charAt(i)) {
-                word = str.charAt(i);
-                sb.append(word);
-            }
-        }
-        int count0 = 0;
-        int count1 = 0;
-        for (int i = 0; i < sb.length(); i++) {
-            if (sb.charAt(i) == '0') {
-                count0++;
-            }
-            if (sb.charAt(i) == '1') {
-                count1++;
-            }
-        }
-        System.out.println(Math.min(count0, count1));
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        String n1 = st.nextToken();
+        String n2 = st.nextToken();
+
+        int min = Integer.parseInt(n1.replace('6','5')) +
+                Integer.parseInt(n2.replace('6','5'));
+
+        int max = Integer.parseInt(n1.replace('5','6')) +
+                Integer.parseInt(n2.replace('5','6'));
+
+        System.out.println(min + " " + max);
 
     }
 }
