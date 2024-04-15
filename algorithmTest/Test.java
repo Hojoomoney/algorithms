@@ -8,28 +8,17 @@ public class Test {
     public static void main(String[] args) throws IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        List<Integer> numbers = new ArrayList<>();
-        while (true) {
-            int n = Integer.parseInt(br.readLine());
-            if (n == -1) break;
-            numbers.add(n);
-        }
-        for (Integer number : numbers) {
-            StringBuilder sb = new StringBuilder();
-            int sum = 0;
-            for (int i = 1; i <= number/2; i++) {
-                if (number % i == 0) {
-                    sb.append(i).append(" + ");
-                    sum += i;
-                }
-            }
-            sb.delete(sb.length() - 2, sb.length());
-            if (sum == number) {
-                System.out.println(number + " = " + sb);
-            } else {
-                System.out.println(number + " is NOT perfect.");
-            }
-        }
+        StringTokenizer st = new StringTokenizer(br.readLine());
+        String n1 = st.nextToken();
+        String n2 = st.nextToken();
+
+        int min = Integer.parseInt(n1.replace('6','5')) +
+                Integer.parseInt(n2.replace('6','5'));
+
+        int max = Integer.parseInt(n1.replace('5','6')) +
+                Integer.parseInt(n2.replace('5','6'));
+
+        System.out.println(min + " " + max);
 
     }
 }
