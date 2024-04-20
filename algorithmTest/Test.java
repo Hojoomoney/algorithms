@@ -12,16 +12,23 @@ public class Test {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
-        String n1 = st.nextToken();
-        String n2 = st.nextToken();
+        int N = Integer.parseInt(st.nextToken());
+        int M = Integer.parseInt(st.nextToken());
+        int six = 1001;
+        int one = 1001;
+        for (int i = 0; i < M; i++) {
+            st = new StringTokenizer(br.readLine());
+            six = Math.min(six,Integer.parseInt(st.nextToken()));
+            one = Math.min(one,Integer.parseInt(st.nextToken()));
+        }
 
-        int min = Integer.parseInt(n1.replace('6','5')) +
-                Integer.parseInt(n2.replace('6','5'));
-
-        int max = Integer.parseInt(n1.replace('5','6')) +
-                Integer.parseInt(n2.replace('5','6'));
-
-        System.out.println(min + " " + max);
+        if(six > one*6){
+            System.out.println(one * N);
+            return;
+        }
+        int total = six * (N / 6);
+        total += Math.min(six, one * (N%6));
+        System.out.println(total);
 
     }
 }
