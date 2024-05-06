@@ -15,21 +15,8 @@ public class Antenna {
         for (int i = 0; i < N; i++) {
             houses[i] = Integer.parseInt(st.nextToken());
         }
-        int min = Integer.MAX_VALUE;
-        int loc = Integer.MAX_VALUE;
-        for (int i = 0; i < N; i++) {
-            int sum = 0;
-            for (int j = 0; j < N; j++) {
-                if (i != j) {
-                    sum += Math.abs(houses[i] - houses[j]);
-                }
-            }
-            min = Math.min(min,sum);
-            if (min == sum){
-                loc = Math.min(loc,houses[i]);
-            }
-        }
-        System.out.println(loc);
+        Arrays.sort(houses);
+        System.out.println(houses[(N-1)/2]);
     }
 
 }
