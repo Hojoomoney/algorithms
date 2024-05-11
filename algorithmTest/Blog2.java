@@ -10,7 +10,7 @@ import java.util.StringTokenizer;
 public class Blog2 {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int N = Integer.parseInt(br.readLine());
+        br.readLine();
         String color = br.readLine();
         List<String> bList = new ArrayList<>();
         List<String> rList = new ArrayList<>();
