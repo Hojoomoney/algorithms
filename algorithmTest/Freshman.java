@@ -3,34 +3,34 @@ package algorithmTest;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.StringTokenizer;
 
 public class Freshman {
+
     public static void main(String[] args) throws IOException {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int T = Integer.parseInt(br.readLine());
-        while (T-- > 0) {
-            int N = Integer.parseInt(br.readLine());
-            Map<Integer, Integer> ranks = new HashMap<>();
-            for (int i = 0; i < N; i++) {
-                StringTokenizer st = new StringTokenizer(br.readLine());
-                ranks.put(Integer.parseInt(st.nextToken()), Integer.parseInt(st.nextToken()));
+        int n= Integer.parseInt(br.readLine());
+        String[] input;
+        for(int i=0;i<n;i++){
+            int m= Integer.parseInt(br.readLine());
+            int count=1;
+            int[] work = new int[m+1];
+            for(int j=0;j<m;j++){
+                input = br.readLine().split(" ");
+                int a= Integer.parseInt(input[0]);
+                int b= Integer.parseInt(input[1]);
+                work[a]=b;
             }
-            for (Map.Entry<Integer, Integer> entry : ranks.entrySet()) {
-                int key = entry.getKey();
-                int value = entry.getValue();
-                for (Map.Entry<Integer, Integer> check : ranks.entrySet()) {
-                    if(key > check.getKey() && value > check.getValue()){
-                        N--;
-                        break;
-                    }
+
+            int vot = work[1];
+
+            for(int j = 2;j <= m; j++){
+                if(work[j] < vot){
+                    vot = work[j];
+                    count++;
                 }
             }
-            System.out.println(N);
+            System.out.println(count);
         }
     }
-
 }
