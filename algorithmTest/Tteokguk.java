@@ -15,19 +15,10 @@ public class Tteokguk {
         for (int i = 0; i < n; i++) {
             bowls.add(Integer.parseInt(st.nextToken()));
         }
-        bowls.sort(Collections.reverseOrder());
         int count = 1;
-        while(!bowls.isEmpty()) {
-            for (int i = 0; i < bowls.size() - 1; i++) {
-                if (bowls.get(i) != bowls.get(i + 1)) {
-                    bowls.remove(i);
-                    i--;
-                }
-            }
-            bowls.remove(bowls.size() - 1);
-            if(!bowls.isEmpty()){
-                count++;
-            }
+        HashSet<Integer> set = new HashSet<>(bowls);
+        for (Integer i : set) {
+            count = Math.max(Collections.frequency(bowls, i),count);
         }
         System.out.println(count);
     }
